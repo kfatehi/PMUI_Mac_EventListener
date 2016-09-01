@@ -10,7 +10,7 @@ module.exports = {
     return {
       macEventId: '10',
       timestamp: new Date(time*1000).toLocaleString(),
-      name: "COMPUTER_WAKE"
+      name: "COMPUTER_AWAKE"
     }
   },
   bootup: function(time) {
@@ -24,7 +24,7 @@ module.exports = {
     return {
       macEventId: '12',
       timestamp: new Date(time*1000).toLocaleString(),
-      name: "COMPUTER_SHUTDOWN"
+      name: "COMPUTER_OFF"
     }
   },
   powerSettingsChange: function() {
