@@ -23,12 +23,26 @@ module.exports = function(linesBack) {
     pipe(makeComputerEvents()).
     on('data', ev => emitter.emit('event', ev));
 
-  process.on('uncaughtException', function(err) {
+  function cleanup() {
     pme.kill();
     asl.kill();
     psc.watcher.unwatch();
+  }
+
+  process.on('uncaughtException', function(err) {
+    cleanup();
     process.stdout.write('\n'+err.stack+'\n');
     process.exit(1);
+  });
+
+  process.on('exit', function() {
+    cleanup();
+    process.exit(0);
+  });
+
+  process.on('SIGINT', function() {
+    cleanup();
+    process.exit(0);
   });
 
   return emitter;
