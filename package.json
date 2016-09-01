@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "JSONStream": "^1.1.4",
     "apple-syslog-stream": "^1.0.0",
     "chokidar": "^1.6.0",
     "debounce": "^1.0.0",
-    "plist": "^2.0.1"
+    "plist": "^2.0.1",
+    "through": "^2.3.8"
   }
 }

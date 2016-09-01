@@ -32,5 +32,5 @@ module.exports = function(_opts) {
 
   watcher.on('change', changeHandler);
 
-  return emitter;
+  return { emitter, watcher };
 }
