@@ -1,11 +1,4 @@
 module.exports = {
-  powerSettingsChange: function() {
-    return {
-      macEventId: '8',
-      timestamp: new Date().toLocaleString(),
-      name: "POWER_SETTINGS_CHANGE"
-    }
-  },
   wentToSleep: function(time) {
     return {
       macEventId: '9',
@@ -32,6 +25,13 @@ module.exports = {
       macEventId: '12',
       timestamp: new Date(time*1000).toLocaleString(),
       name: "COMPUTER_SHUTDOWN"
+    }
+  },
+  powerSettingsChange: function() {
+    return {
+      macEventId: '13',
+      timestamp: new Date().toLocaleString(),
+      name: "POWER_SETTINGS_CHANGE"
     }
   }
 }
