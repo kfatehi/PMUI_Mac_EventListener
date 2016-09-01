@@ -88,6 +88,8 @@ class UserEventListener: NSObject, NSApplicationDelegate {
     
     func printUserEventJson(id: Int16){
            print("{\"event\": {\"macEventId\":\"\(id)\",\"timestamp\":\"\(self.cdatetime)\",\"name\":\"\(self.user_state)\"}}");
+        setbuf(__stdoutp, nil);
+
     }
     
     
