@@ -24,7 +24,7 @@ module.exports = {
     return {
       macEventId: '11',
       timestamp: new Date(time*1000).toLocaleString(),
-      name: "COMPUTER_BOOT"
+      name: "COMPUTER_ON"
     }
   },
   shutdown: function(time) {
