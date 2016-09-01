@@ -101,7 +101,7 @@ class UserEventListener: NSObject, NSApplicationDelegate {
             [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true])
         
         if accessEnabled != true {
-            print("You PMUI EventListener in the System Preferences")
+           // print("You PMUI EventListener in the System Preferences")
         }
         return accessEnabled == true
     }
