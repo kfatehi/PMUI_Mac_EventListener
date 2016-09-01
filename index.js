@@ -11,15 +11,19 @@ module.exports = function() {
     emitter.emit('event', ec.powerSettingsChange());
   })
 
-  var proc = appleSyslog.spawn({
-    args: ['-w', 10]
-  });
+  appleSyslog.spawn({ args: ['-w', 10] }).
+    stdout.pipe(appleSyslog.parser()).
+    on('data', handleSyslogEvent(emitter));
 
-  proc.stdout.pipe(appleSyslog.parser()).on('data', function(data) {
+  return emitter;
+}
+
+function handleSyslogEvent(emitter) {
+  var state = { };
+  return function (syslogEvent) {
     //console.log(data);
     //if ( data.sender === 'shutdown' ) {
     //  console.log(data);
     //}
-  });
-  return emitter;
+  }
 }
